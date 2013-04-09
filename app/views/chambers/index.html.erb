@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span8">
+    <h3>List of Chambers</h3>
+    <br><br><%= link_to "Create Chamber", new_chamber_path, :class => 'btn btn-primary' %>
+    <br></br>
+    <% if @all_chambers.count != 0 %>
+      <table class="table table-striped table-bordered table-condensed">
+        <tr>
+          <th>Number</th>
+          <th>Substance</th>
+        </tr>
+        <% @all_chambers.each do |c| %>
+          <tr>
+            <td><%= c.id %></td>
+            <td><%= link_to c.substance, chamber_path(c) %></td>
+          </tr>
+        <% end %>
+        </tr>
+      </table>
+      <div class="flickr_pagination">
+        <%= will_paginate @all_chambers, :previous_label => "← Previous&nbsp;", :next_label => "&nbsp;Next →" %>
+      </div>
+  
+    <% else %>
+      <h4>There are currently no chambers</h4>
+    <% end %>
+  </div>
+</div>  

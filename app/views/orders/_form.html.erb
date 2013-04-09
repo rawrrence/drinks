@@ -1,0 +1,26 @@
+<%= simple_nested_form_for @order do |f| %>
+  <div class="row">
+    <div class="span7">
+      <fieldset>
+        <legend><%= controller.action_name.capitalize %> Order</legend>
+
+        <%= f.input :name, :required => false %>
+      </fieldset>
+    </div>
+    <div class="span5">
+      <legend>Ingredients for this Order</legend>
+      <div id="order_ingredients">
+        <%= f.simple_fields_for :ingredients do |ingredient_form| %>
+          <%= render :partial => "ingredients_fields", :locals => { :f => ingredient_form } %>
+        <% end %> 
+        <p>
+          <br /><%= f.link_to_add(raw("Add Ingredient"), :ingredients, :class => 'btn btn-mini btn-primary') %>
+        </p>
+      </div> 
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %> &nbsp;
+    <%= link_to 'Cancel', orders_path, :class => 'btn' %>
+  </div>
+<% end %>

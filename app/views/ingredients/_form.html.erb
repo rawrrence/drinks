@@ -1,0 +1,13 @@
+<%= simple_form_for @event do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Ingredients</legend>
+
+    <%= f.input :order_id, :collection => get_order_options %>
+    <%= f.input :chamber_id, :collection => get_chamber_options %>
+    
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %> &nbsp;
+      <%= link_to 'Cancel', events_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

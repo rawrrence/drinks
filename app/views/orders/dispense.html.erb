@@ -1,0 +1,15 @@
+<% values = [] %>
+<% for c in Chamber.all %>
+	<% contains = false %>
+	<% for i in @order.ingredients.all %>
+		<% if i.chamber_id == c.id %>
+			<% values << i.amount %>
+			<% contains = true %>
+		<% end %>
+	<% end %>
+	<% if !contains %>
+		<% values << 0 %>
+	<% end %>
+<% end %>
+<% values = values.join(' ') %>
+<%= values %>

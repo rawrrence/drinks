@@ -1,0 +1,12 @@
+<%= simple_form_for @chamber do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Chamber</legend>
+
+    <%= f.input :substance, :required => false %>
+    
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %> &nbsp;
+      <%= link_to 'Cancel', chambers_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
