@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'sqlite3', '1.3.7'
+gem 'pg'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 gem 'validates_timeliness', '3.0.14'
