@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'pg'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 gem 'validates_timeliness', '3.0.14'
@@ -49,4 +48,11 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.3.0'
 	gem 'jquery-ui-rails', '4.0.1'
+end
+
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'sqlite3'
 end
