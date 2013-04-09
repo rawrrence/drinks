@@ -6,7 +6,7 @@ Drinks::Application.routes.draw do
 
 
   resources :orders do
-    get :dispense, :on => :collection 
+    get :dispense
   end
 
 

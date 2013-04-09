@@ -83,7 +83,7 @@ class OrdersController < ApplicationController
   end
 
   def dispense
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:order_id])
 
     render :layout => false
   end
