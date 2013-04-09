@@ -10,6 +10,8 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem 'simple_form'
 gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 gem 'thin', '1.5.0'
+gem 'unicorn'
+
 
 # Gems used only in testing
 group :test do

@@ -9,7 +9,7 @@ gem 'jquery-rails', '2.2.1'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'simple_form'
 gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
-
+gem 'thin', '1.5.0'
 
 # Gems used only in testing
 group :test do
@@ -31,7 +31,6 @@ end
 # Gems used only in development
 group :development do
   gem 'quiet_assets', '1.0.2'
-  gem 'thin', '1.5.0'
   gem 'better_errors', '0.7.0'
   gem 'binding_of_caller', '0.7.1'
   gem 'meta_request', '0.2.2'
