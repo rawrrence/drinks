@@ -1,7 +1,7 @@
 class Ingredient < ActiveRecord::Base
   attr_accessible :amount, :chamber_id, :order_id
 
-  belongs_to :order
+  belongs_to :order, :dependent => :destroy
   belongs_to :chamber
 
   scope :by_chamber_id, order('chamber_id')

@@ -4,5 +4,4 @@ class Chamber < ActiveRecord::Base
   scope :alphabetical, order('substance')
   scope :by_id, order('id')
 
-  validates_presence_of :substance
 end
