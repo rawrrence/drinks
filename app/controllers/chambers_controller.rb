@@ -41,7 +41,7 @@ class ChambersController < ApplicationController
   def update
     @chamber = Chamber.find(params[:id])
 
-    if @chamber.update_attributes(params[:event])
+    if @chamber.update_attributes(params[:chamber])
       flash[:notice] = "Successfully updated chamber."
       redirect_to @chamber
     else
