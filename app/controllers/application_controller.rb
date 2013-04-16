@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def get_chamber_options
   	options = []
-  	Chamber.all.each do |c|
+  	Chamber.non_empty.each do |c|
   		options << ["#{c.substance}", c.id]
   	end
   	return options

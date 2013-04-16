@@ -3,5 +3,7 @@ class Chamber < ActiveRecord::Base
 
   scope :alphabetical, order('substance')
   scope :by_id, order('id')
+  scope :non_empty, where('substance != ?', "")
+
 
 end
