@@ -87,4 +87,10 @@ class OrdersController < ApplicationController
 
     render :layout => false
   end
+
+  def dispense_all
+    @orders = Order.by_id
+
+    render :layout => false
+  end
 end

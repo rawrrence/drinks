@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
 
 
   scope :alphabetical, order('name')
+  scope :by_id, order('id')
 
   #validates_presence_of :name
 end

@@ -1,4 +1,6 @@
 Drinks::Application.routes.draw do
+  match '/orders/dispense_all' => 'orders#dispense_all'
+
   resources :ingredients
 
 
@@ -7,6 +9,7 @@ Drinks::Application.routes.draw do
 
   resources :orders do
     get :dispense
+    get :dispense_all
   end
 
 
