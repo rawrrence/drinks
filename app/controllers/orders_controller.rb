@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @all_orders = Order.alphabetical.paginate(:page => params[:page], :per_page => 10)
+    @active_orders = Order.active.alphabetical.paginate(:page => params[:page], :per_page => 10)
+    @inactive_orders = Order.inactive.alphabetical.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

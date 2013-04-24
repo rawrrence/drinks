@@ -43,7 +43,7 @@ class ChambersController < ApplicationController
 
     if @chamber.update_attributes(params[:chamber])
       flash[:notice] = "Successfully updated chamber."
-      redirect_to @chamber
+      redirect_to chambers_path
     else
       render :action => 'edit'
     end
