@@ -61,14 +61,7 @@ legend {
   clear: both; /* Required for Webkit, but not for Gecko */
 }
 
-.table-bordered {
-  border-bottom-color:#79dcea;
-  border-right-color:#DDDDDD;
-  border-top-color:#79dcea;
-}
-
 .table th, .table td {
-  border-top-color:#79dcea;
   line-height:25px;
   padding:8px;
   text-align:left;
