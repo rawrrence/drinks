@@ -7,13 +7,18 @@
         <tr>
           <th>Number</th>
           <th>Substance</th>
-          <th></th>
         </tr>
         <% @all_chambers.each do |c| %>
+          <% if c.substance == "" %>
+            <% display = "Empty" %>
+          <% else %>
+            <% display = c.substance %>
+          <% end %>
           <tr>
             <td><%= c.id %></td>
-            <td><%= c.substance %></td>
-            <td><%= link_to "Update", edit_chamber_path(c.id), :class => 'btn btn-primary' %></td>
+            <td><%= display %></td>
+            <td><%= link_to "Update", edit_chamber_path(c.id), :class => 'btn btn-primary' %>
+                <%= link_to "Empty", empty_chamber_path(c.id), :class => 'btn btn-success' %></td>
           </tr>
         <% end %>
         </tr>

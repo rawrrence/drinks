@@ -6,7 +6,12 @@
 			<h4>Chamber Number: </h4><%= @chamber.id -%>
 		</p>
 		<p>
-			<h4>Substance: </h4><%= @chamber.substance -%>
+			<% unless @chamber.substance == "" %>
+				<% display = @chamber.substance %>
+			<% else %>
+				<% display = Empty %>
+			<% end %>
+			<h4>Substance: </h4><%= display -%>
 		</p>
 	</div>
 </div>

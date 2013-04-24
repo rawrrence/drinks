@@ -57,4 +57,11 @@ class ChambersController < ApplicationController
     flash[:notice] = "Successfully deleted chamber."
     redirect_to chambers_url
   end
+
+  def empty
+    @chamber = Chamber.find(params[:id])
+    @chamber.empty_chamber
+    flash[:notice] = "Emptied Chamber #{@chamber.id}!"
+    redirect_to chambers_url
+  end
 end

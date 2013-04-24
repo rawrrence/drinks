@@ -5,5 +5,9 @@ class Chamber < ActiveRecord::Base
   scope :by_id, order('id')
   scope :non_empty, where('substance != ?', "")
 
+  def empty_chamber
+  	self.substance = ""
+  	self.save!
+  end
 
 end
