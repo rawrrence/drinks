@@ -90,7 +90,7 @@ class OrdersController < ApplicationController
   end
 
   def dispense_all
-    @orders = Order.by_id
+    @orders = Order.active.by_id
 
     render :layout => false
   end
