@@ -16,6 +16,13 @@ class AddChambers < ActiveRecord::Migration
     chamber6.kind = "Solid"
     chamber7.kind = "Solid"
 
+    chamber1.substance = ""
+    chamber2.substance = ""
+    chamber3.substance = ""
+    chamber4.substance = ""
+    chamber5.substance = ""
+    chamber6.substance = ""
+    chamber7.substance = ""
 
   	chamber1.save!
   	chamber2.save!
