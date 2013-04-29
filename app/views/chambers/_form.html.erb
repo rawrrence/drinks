@@ -1,6 +1,6 @@
 <%= simple_form_for @chamber do |f| %>
   <fieldset>
-    <legend><%= controller.action_name.capitalize %> Chamber</legend>
+    <legend><%= controller.action_name.capitalize %> Chamber (<%= @chamber.kind %>)</legend>
 
     <%= f.input :substance %>
     

@@ -7,6 +7,7 @@
         <tr>
           <th>Number</th>
           <th>Substance</th>
+          <th>Type</th>
         </tr>
         <% @all_chambers.each do |c| %>
           <% if c.substance == "" %>
@@ -17,6 +18,7 @@
           <tr>
             <td><%= c.id %></td>
             <td><%= display %></td>
+            <td><%= c.kind %></td>
             <td><%= link_to "Update", edit_chamber_path(c.id), :class => 'btn btn-primary' %>
                 <%= link_to "Empty", empty_chamber_path(c.id), :class => 'btn btn-success' %></td>
           </tr>
