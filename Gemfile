@@ -11,6 +11,8 @@ gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 gem 'thin', '1.5.0'
 gem 'unicorn'
 gem 'amoeba'
+gem 'jquery-ui-rails', '4.0.1'
+
 
 # Gems used only in testing
 group :test do
@@ -47,7 +49,6 @@ group :assets do
   gem 'sass-rails', '3.2.6'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.3.0'
-	gem 'jquery-ui-rails', '4.0.1'
 end
 
 group :production do
