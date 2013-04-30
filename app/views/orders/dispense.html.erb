@@ -1,5 +1,5 @@
 <% values = [] %>
-<% for c in Chamber.all %>
+<% for c in Chamber.by_id %>
 	<% contains = false %>
 	<% for i in @order.ingredients.all %>
 		<% if i.chamber_id == c.id %>
