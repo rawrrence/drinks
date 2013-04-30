@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @active_orders = Order.active.alphabetical.paginate(:page => params[:page], :per_page => 10)
-    @inactive_orders = Order.inactive.alphabetical.paginate(:page => params[:page], :per_page => 10)
+    @inactive_orders = Order.inactive.chronological.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,6 +80,26 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to orders_url }
       format.json { head :no_content }
+    end
+  end
+
+  def reorder
+    @order = Order.find(params[:id])
+    @neworder = @order.dup
+    @order.ingredients.each do |i|
+      @neworder.ingredients << i.dup
+    end
+    @neworder.active = true
+
+
+    respond_to do |format|
+      if @neworder.save
+        format.html { redirect_to @neworder, notice: 'Order was successfully created.' }
+        format.json { render json: @neworder, status: :created, location: @neworder }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @neworder.errors, status: :unprocessable_entity }
+      end
     end
   end
 

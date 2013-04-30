@@ -10,6 +10,7 @@ class Order < ActiveRecord::Base
   scope :active, where('active = ?', true)
   scope :inactive,where('active = ?', false)
 
+  scope :chronological, order('updated_at')
   scope :alphabetical, order('name')
   scope :by_id, order('id')
 

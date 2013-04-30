@@ -25,18 +25,21 @@
   </div>
   <div class="span2">
   </div>
-  <div class="span3"><br><br>
+  <div class="span4"><br><br>
     <h4>Order History</h4><br><br><br>
     <% if @inactive_orders.count != 0 %>
       <table class="table table-striped table-bordered table-condensed">
         <tr>
           <th>Name</th>
-          <th>Date</th>
+          <th>Time</th>
         </tr>
         <% @inactive_orders.each do |o| %>
           <tr>
-            <td><%= o.name %></td>
-            <td><%= o.updated_at.strftime("%m/%d/%Y") %></td> 
+            <td><%= o.name -%></td>
+            <td><%= o.updated_at.strftime("%H:%M - %m/%d/%Y") -%></td> 
+            <td>
+              <%= button_to "Re-Order", reorder_path(o.id), :class => 'btn btn-info', :disabled => !o.on_menu -%>
+            </td>
           </tr>
         <% end %>
         </tr>
@@ -46,7 +49,7 @@
       </div>
   
     <% else %>
-      <h4>There have not been any completed order yet!</h4>
+      <h4>There have not been any completed orders yet!</h4>
     <% end %>
   </div>
 </div>  

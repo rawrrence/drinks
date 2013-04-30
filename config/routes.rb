@@ -18,6 +18,7 @@ Drinks::Application.routes.draw do
   match 'contact' => 'home#contact', :as => :contact
   match '/orders/:id/dispense' => 'orders#dispense'
   match '/chambers/:id/empty' => 'chambers#empty', :as => :empty_chamber
+  match '/orders/:id/reorder' => 'orders#reorder', :as => :reorder
 
   root :to => 'home#index'
 end
